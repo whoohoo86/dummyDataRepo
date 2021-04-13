@@ -1,6 +1,8 @@
 Datensatzdokumentation  
 # SARS-CoV-2 Infektionen in Deutschland
 
+ÄNDERUNGEN
+
 
 [Robert Koch-Institut](https://grid.ac/institutes/grid.13652.33) | RKI  
 Nordufer 20  
