@@ -30,6 +30,6 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Datenstand ${{ github.ref }}
           body: |
-           Update ${{ github.ref }}
+           Update ${{ github.ref }} :)
           draft: false
           prerelease: false
