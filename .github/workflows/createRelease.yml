@@ -29,7 +29,6 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Datenstand ${{ github.ref }}
-          body: |
-           Update ${{ github.ref }} :)
+          body: Update ${{ github.ref }} | ${{ github.head_ref }} | ${{ github.base_ref }} :)
           draft: false
           prerelease: false
