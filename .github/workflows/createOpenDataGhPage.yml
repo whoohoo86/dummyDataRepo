@@ -16,11 +16,15 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
+    steps:      
       - name: Create orphaned branch
-        run: |
-          git checkout --orphan tmp-gh-open-data-page
-          git clone https://github.com/whoohoo86/gh-open-data-page.git
+        # run: git clone https://github.com/whoohoo86/gh-open-data-page.git
+        uses: actions/checkout@v2
+        with:
+          repository: 'whoohoo86/gh-open-data-page'
+          
+      - name: Echo some content
+        run : "ls -la $GITHUB_WORKSPACE"
         
       - name: Create datasource.json
         uses: ./
