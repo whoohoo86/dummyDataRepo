@@ -23,7 +23,7 @@ jobs:
           git clone https://github.com/whoohoo86/gh-open-data-page.git
         
       - name: Create datasource.json
-      - uses: ./
+        uses: ./
         with:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
