@@ -1,6 +1,64 @@
 {
-  "title": "SARS-CoV-2 Infektionen in Deutschland",
-  "description": "<p>Im Datensatz 'SARS-CoV-2 Infektionen in Deutschland' werden die tagesaktuellen Fallzahlen, der nach den Vorgaben des Infektionsschutzgesetz - IfSG - von den Gesundheitsämtern in Deutschand gemeldeten positiven SARS-Cov-2 Infektionen, Todes- und Genesungsfälle bereitgestellt.</p>",
+  "title": "Dummy DatensatzChanges Na dann maaaa",
+  "description": "Ich bin die Beschreibung des Dummy-Datensatzes.\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\nDuis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ",
+  "creators": [
+    {
+      "name": "Claus, Hermann",
+      "affiliation": "Robert Koch-Institut"
+    },
+    {
+      "name": "Wünsche, Hannes",
+      "affiliation": "Robert Koch-Institut"
+    },
+    {
+      "name": "Eckelmann, Fabian",
+      "affiliation": "Robert Koch-Institut"
+    },
+    {
+      "name": "Claus, Santa",
+      "affiliation": "Robert Koch-Institut"
+    },
+    {
+      "name": "Weinford, Harry",
+      "affiliation": "Robert Koch-Institut"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Contributor2",
+      "affiliation": "Robert Koch-Institut",
+      "orcid": "",
+      "type": "Contributor"
+    },
+    {
+      "name": "Contributor3",
+      "affiliation": "Robert Koch-Institut",
+      "orcid": "",
+      "type": "Contributor"
+    },
+    {
+      "name": "Contributor4",
+      "affiliation": "Robert Koch-Institut",
+      "orcid": "",
+      "type": "Contributor"
+    },
+    {
+      "name": "asd",
+      "affiliation": "Robert Koch-Institut",
+      "orcid": "",
+      "type": "fdffd"
+    }
+  ],
+  "keywords": [
+    "tag1",
+    "tag2",
+    "tagsehrlang",
+    "tagsehrsehrlang",
+    "tagsehrsehrsehrlang",
+    "tagsehrsehrsehrsehrlang",
+    "tagsehrsehrsehrsehrsehrsehrlang"
+  ],
+  "publication_date": "2022-06-07T11:05:35+02:00",
   "upload_type": "dataset",
   "access_right": "open",
   "license": "cc-by",
@@ -9,47 +67,6 @@
     {
       "identifier": "robertkochinstitut"
     }
-  ],
-  "creators": [
-    {
-      "name": "Robert Koch-Institut",
-      "affiliation": "Robert Koch-Institut"
-    }
-  ],
-  "contributors": [
-    {
-      "name": "Diercke, Michaela",
-      "affiliation": "Robert Koch-Institut",
-      "orcid": "0000-0002-4678-1813",
-      "type": "ProjectManager"
-    },
-    {
-      "name": "Claus, Hermann",
-      "affiliation": "Robert Koch-Institut",
-      "orcid": "0000-0002-0120-1846",
-      "type": "ProjectManager"
-    },
-    {
-      "name": "Grabenhenrich, Linus",
-      "affiliation": "Robert Koch-Institut",
-      "orcid": "0000-0002-9300-6625",
-      "type": "ProjectManager"
-    },
-    {
-      "name": "Wuensche, Hannes",
-      "affiliation": "Robert Koch-Institut",
-      "orcid": "0000-0002-8837-0326",
-      "type": "DataCurator"
-    }
-  ],
-  "keywords": [
-    "SARS-CoV-2",
-    "Germany",
-    "Deutschland",
-    "COVID-19",
-    "Infections",
-    "Infektion",
-    "RKI"
   ],
   "subjects": [
     {
@@ -69,5 +86,5 @@
       "identifier": "info:ddc/22/de//614.42"
     }
   ],
-  "publication_date": "2022-01-13T12:58:12+01:00"
+  "version": "2022-06-07"
 }
