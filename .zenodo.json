@@ -58,7 +58,7 @@
     "tagsehrsehrsehrsehrlang",
     "tagsehrsehrsehrsehrsehrsehrlang"
   ],
-  "publication_date": "2022-06-07T11:05:35+02:00",
+  "publication_date": "2022-06-07T11:10:28+02:00",
   "upload_type": "dataset",
   "access_right": "open",
   "license": "cc-by",
@@ -84,6 +84,14 @@
     {
       "term": "Gesundheitsberichterstattung",
       "identifier": "info:ddc/22/de//614.42"
+    }
+  ],
+  "dates": [
+    {
+      "start": "2021-02-08",
+      "end": "2022-06-07",
+      "type": "Collected",
+      "description": "Describe me!!!"
     }
   ],
   "version": "2022-06-07"
