@@ -1,4 +1,4 @@
-name: Upload data to NFDI4Health API
+name: Create or update data on NFDI4Health via API
 
 on:
   workflow_dispatch:
