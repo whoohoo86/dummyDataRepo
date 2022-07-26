@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'Metadaten/**.nfdi4health.json'
+      - 'nfdi4health.json'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -18,8 +18,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Read id from 'Metadaten/**.nfdi4health.json'
+      - name: Read id from '.nfdi4health.json'
         run: |
-          echo $github
-          echo $GITHUB_EVENT_PATH
-          echo "`jq '.data.id"' $GITHUB_EVENT_PATH`"
+          echo "`jq '.data.id"' nfdi4health.json`"
