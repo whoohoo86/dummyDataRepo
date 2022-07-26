@@ -23,9 +23,15 @@ jobs:
             echo "NFDI4HEALTH_DATA=`cat ./path/to/package.json`" >> $GITHUB_ENV
 
       - name: POST nfdi4health.json
+        id: postData
         uses: fjogeleit/http-request-action@v1
         with:
           url: 'https://csh.nfdi4health.de/mdr/studyhub_resources'
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json", "Accept": "application/json", "Authorization": "Token ${{ secrets.NFDI4HEALTH_TOKEN }}"}'
           data: env.NFDI4HEALTH_DATA
+
+      - name: Display Post response
+        run: |
+          echo ${{ steps.postData.outputs.response }}
+        # echo ${{ fromJson(steps.myRequest.outputs.response).field_you_want_to_access }}
