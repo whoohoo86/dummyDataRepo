@@ -20,4 +20,4 @@ jobs:
 
       - name: Read id from '.nfdi4health.json'
         run: |
-          echo "`jq '.data.id"' nfdi4health.json`"
+          echo "`jq '.data.id' nfdi4health.json`"
