@@ -16,14 +16,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@2
-        with:
-          path: ./
+      - uses: actions/checkout@main
 
       - name: Read id from '.nfdi4health.json'
         run: |
-          echo "`jq '.data.id' ./Metadata/nfdi4health.json`"
-          echo "`jq '.data.id' ./Metadata/nfdi4health.json`" >> $NFDI4HEALTH_ID
+          echo "`jq '.data.id' ./Metadaten/nfdi4health.json`"
+          echo "`jq '.data.id' ./Metadaten/nfdi4health.json`" >> $NFDI4HEALTH_ID
           
       - name: Read id from env
         run: |
