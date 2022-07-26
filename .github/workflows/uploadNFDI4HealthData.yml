@@ -21,7 +21,7 @@ jobs:
       - name: Read id from '.nfdi4health.json'
         run: |
           echo "`jq '.data.id' ./Metadaten/nfdi4health.json`"
-          echo "NFDI4HEALTH_ID=`jq '.data.id' ./Metadaten/nfdi4health.json`" >> $GITHUB_ENV
+          echo "NFDI4HEALTH_ID=fromJson(`jq '.data.id' ./Metadaten/nfdi4health.json`)" >> $GITHUB_ENV
           
       - name: Read id from env
         run: |
