@@ -1,4 +1,4 @@
-name: Update data on NFDI4Health via API
+name: Create data on NFDI4Health via API
 
 on:
   workflow_dispatch:
@@ -24,8 +24,8 @@ jobs:
 
       - name: POST nfdi4health.json
         uses: fjogeleit/http-request-action@v1
-          with:
-            url: 'https://csh.nfdi4health.de/mdr/studyhub_resources'
-            method: 'POST'
-            customHeaders: '{"Content-Type": "application/json", "Accept": "application/json", "Authorization": "Token ${{ secrets.NFDI4HEALTH_TOKEN }}"}'
-            data: env.NFDI4HEALTH_DATA
+        with:
+          url: 'https://csh.nfdi4health.de/mdr/studyhub_resources'
+          method: 'POST'
+          customHeaders: '{"Content-Type": "application/json", "Accept": "application/json", "Authorization": "Token ${{ secrets.NFDI4HEALTH_TOKEN }}"}'
+          data: env.NFDI4HEALTH_DATA
