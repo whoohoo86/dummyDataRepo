@@ -28,11 +28,11 @@ jobs:
           echo ${{ env.NFDI4HEALTH_ID }}
           
       - name: Create NFDI4Health resource
-        if: env.NFDI4HEALTH_ID == null
+        if: env.NFDI4HEALTH_ID == "null"
         run: |
           echo Create TODO
           
       - name: Update NFDI4Health resource
-        if: env.NFDI4HEALTH_ID != null
+        if: env.NFDI4HEALTH_ID != "null"
         run: |
           echo Update TODO
