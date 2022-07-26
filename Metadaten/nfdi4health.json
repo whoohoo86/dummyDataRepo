@@ -1,5 +1,6 @@
 {
     "data": {
+        "id": 202,
         "type": "studyhub_resources",
         "attributes": {
             "commit_button": "Submit",
