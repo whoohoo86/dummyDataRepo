@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'nfdi4health.json'
+      - 'Metadaten/nfdi4health.json'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
