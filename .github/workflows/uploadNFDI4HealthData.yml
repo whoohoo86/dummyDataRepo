@@ -20,6 +20,6 @@ jobs:
 
       - name: Read id from 'Metadaten/**.nfdi4health.json'
         run: |
-          echo fromJson(github)
+          echo "${{fromJson(github)}}"
           echo $GITHUB_EVENT_PATH
           echo "`jq '.data.id"' $GITHUB_EVENT_PATH`"
