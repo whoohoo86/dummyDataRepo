@@ -23,10 +23,6 @@ jobs:
           echo "`jq '.data.id' ./Metadaten/nfdi4health.json`"
           echo "NFDI4HEALTH_ID=`jq '.data.id' ./Metadaten/nfdi4health.json`" >> $GITHUB_ENV
           
-      - name: Read id from env
-        run: |
-          echo ${{ env.NFDI4HEALTH_ID }}
-          
       - name: Create NFDI4Health resource
         if: fromJson(env.NFDI4HEALTH_ID) == null
         run: |
