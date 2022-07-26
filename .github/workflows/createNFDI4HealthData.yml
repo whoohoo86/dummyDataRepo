@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@v3.0.2
       
       - name: Read nfdi4health.json content
+        id: nfdi4healthData
         run: |
           content=`cat Metadaten/nfdi4health.json`
           # the following lines are only required for multi line json
@@ -26,12 +27,12 @@ jobs:
           content=${content//$n/%0A}
           content=${content//$r/%0D}
           # end of optional handling for multi line json
-          echo "NFDI4HEALTH_DATA=$content" >> $GITHUB_ENV
+          echo ::set-output name=data::$content
 
       - name: Output
         run: |
-          echo ENV-CONTENT
-          echo $NFDI4HEALTH_DATA
+          echo ${{ steps.nfdi4healthData.outputs.data }}
+          echo ${{ fromJson(steps.nfdi4healthData.outputs.data) }}
 
       - name: POST nfdi4health.json
         id: postData
@@ -40,7 +41,7 @@ jobs:
           url: 'https://csh.nfdi4health.de/mdr/studyhub_resources'
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json", "Accept": "application/json", "Authorization": "Token ${{ secrets.NFDI4HEALTH_TOKEN }}"}'
-          data: env.NFDI4HEALTH_DATA
+          data: ${{ steps.nfdi4healthData.outputs.data }}
 
       - name: Display Post response
         run: |
