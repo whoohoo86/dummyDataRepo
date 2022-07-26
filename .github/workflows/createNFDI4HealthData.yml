@@ -20,7 +20,7 @@ jobs:
       
       - name: Read nfdi4health.json content
         run: |
-            echo "NFDI4HEALTH_DATA=`cat ./path/to/package.json`" >> $GITHUB_ENV
+            echo "NFDI4HEALTH_DATA=`cat Metadaten/nfdi4health.json`" >> $GITHUB_ENV
 
       - name: POST nfdi4health.json
         id: postData
