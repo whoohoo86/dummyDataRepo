@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+type: dataset
+title: Dummy DatensatzChanges Na dann maaaa
+abstract: >-
+  Ich bin die Beschreibung des Dummy-Datensatzes.
+
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+  eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+  voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+  kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+  ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+  tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+  vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+  gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+  dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+  invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+  eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+  sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+  consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+  accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+  augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+  consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+  laoreet dolore magna aliquam erat volutpat. 
+date-released: '2022-02-01'
+keywords:
+  - tag1
+  - tag2
+  - tagsehrlang
+  - tagsehrsehrlang
+  - tagsehrsehrsehrlang
+  - tagsehrsehrsehrsehrlang
+  - tagsehrsehrsehrsehrsehrsehrlang
+message: Cite me!
+licence: CC-BY-4.0
+doi: 123/123
+authors:
+  - name: Claus, Hermann
+  - name: Wünsche, Hannes
+  - name: Eckelmann, Fabian
+  - name: Claus, Santa
+  - name: Weinford, Harry
