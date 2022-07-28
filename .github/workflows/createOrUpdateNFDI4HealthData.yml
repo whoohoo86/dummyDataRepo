@@ -37,9 +37,9 @@ jobs:
 
       - name: Output
         run: |
-          echo RAW: ${{ steps.nfdi4healthData.outputs.data }}
-          echo JSON ${{ fromJson(steps.nfdi4healthData.outputs.data) }}
-          echo ID: ${{ fromJson(steps.nfdi4healthData.outputs.data).id }}
+          # echo RAW: ${{ steps.nfdi4healthData.outputs.data }}
+          echo JSON: ${{ fromJson(steps.nfdi4healthData.outputs.data) }}
+          echo ID: ${{ fromJson(steps.nfdi4healthData.outputs.data).data.id }}
       
       #- name: POST nfdi4health.json
       #  id: postData
