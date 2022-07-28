@@ -32,14 +32,12 @@ jobs:
           content=${content//$n/%0A}
           content=${content//$r/%0D}
           # end of optional handling for multi line json
-          # content=fromJson($content)
-          echo ::set-output name=data::$content
+          echo ::set-output name=json::fromJson($content)
 
       - name: Output
         run: |
-          # echo RAW: ${{ steps.nfdi4healthData.outputs.data }}
-          echo JSON: ${{ fromJson(steps.nfdi4healthData.outputs.data) }}
-          echo ID: ${{ fromJson(steps.nfdi4healthData.outputs.data).data.id }}
+          echo JSON: ${{ steps.nfdi4healthData.outputs.json }}
+          echo ID: ${{ steps.nfdi4healthData.outputs.json.data.id }}
       
       #- name: POST nfdi4health.json
       #  id: postData
@@ -50,12 +48,12 @@ jobs:
       #    customHeaders: '{"Content-Type": "application/json", "Accept": "application/json", "Authorization": "Token ${{ secrets.NFDI4HEALTH_TOKEN }}"}'
       #    data: ${{ steps.nfdi4healthData.outputs.data }}
           
-      #- name: Create NFDI4Health resource
-      #  if: fromJson(env.NFDI4HEALTH_ID) == null
-      #  run: |
-      #    echo Create TODO
+      - name: Create NFDI4Health resource
+        if: steps.nfdi4healthData.outputs.json.data.id == null
+        run: |
+          echo Create TODO
           
-      #- name: Update NFDI4Health resource
-      #  if: fromJson(env.NFDI4HEALTH_ID) != null
-      #  run: |
-      #    echo Update TODO
+      - name: Update NFDI4Health resource
+        if: steps.nfdi4healthData.outputs.json.data.id != null
+        run: |
+          echo Update TODO
