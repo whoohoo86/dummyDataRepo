@@ -32,12 +32,12 @@ jobs:
           content=${content//$n/%0A}
           content=${content//$r/%0D}
           # end of optional handling for multi line json
-          echo ::set-output name=json::fromJson($content)
+          echo ::set-output name=jsonContent::$content
 
       - name: Output
         run: |
-          echo JSON: ${{ steps.nfdi4healthData.outputs.json }}
-          echo ID: ${{ steps.nfdi4healthData.outputs.json.data.id }}
+          # echo JSON: ${{ steps.nfdi4healthData.outputs.jsonContent }}
+          echo ID: ${{ fromJson(steps.nfdi4healthData.outputs.jsonContent).data.id }}
       
       #- name: POST nfdi4health.json
       #  id: postData
@@ -49,11 +49,11 @@ jobs:
       #    data: ${{ steps.nfdi4healthData.outputs.data }}
           
       - name: Create NFDI4Health resource
-        if: steps.nfdi4healthData.outputs.json.data.id == null
+        if: fromJson(steps.nfdi4healthData.outputs.jsonContent).data.id == null
         run: |
           echo Create TODO
           
       - name: Update NFDI4Health resource
-        if: steps.nfdi4healthData.outputs.json.data.id != null
+        if: fromJson(steps.nfdi4healthData.outputs.jsonContent).data.id != null
         run: |
           echo Update TODO
