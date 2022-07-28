@@ -59,15 +59,15 @@ jobs:
         run: |
           echo ${{steps.create.outputs.response}}
         
-      # - name: Replace nfdi4health.json
-      #   run: |
-      #     echo ${{steps.create.outputs.response}} > Metadaten/nfdi4health.json
+      - name: Replace nfdi4health.json
+        run: |
+          echo "${{steps.create.outputs.response}}" > Metadaten/nfdi4health.json
           
-      # - name: Push nfdi4health.json
-      #   uses: EndBug/add-and-commit@v9
-      #   with:
-      #     message: 'Updated nfdi4health.json with API response'
-      #     add: 'Metadaten/nfdi4health.json'
+      - name: Push nfdi4health.json
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Updated nfdi4health.json with API response'
+          add: 'Metadaten/nfdi4health.json'
           
   update: 
     runs-on: ubuntu-latest
