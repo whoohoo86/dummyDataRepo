@@ -55,12 +55,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@main
         
-      - name: Replace nfdi4health.json
-        uses: jsdaniell/create-json@1.1.2
-        with:
-          name: 'nfdi4health.json'
-          json: ${{steps.create.outputs.response}}
-          dir: 'Metadaten'
+      - name: Write id to nfdi4health.json
+        run: |
+          echo "`jq '.data.id=${{fromJson(steps.create.outputs.response).data.id}}' Metadaten/nfdi4health.json `" > Metadaten/nfdi4health.json 
           
       - name: Push nfdi4health.json
         uses: EndBug/add-and-commit@v9
