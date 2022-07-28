@@ -39,7 +39,7 @@ jobs:
   create: 
     runs-on: ubuntu-latest
     needs: read
-    if: fromJson(steps.nfdi4healthData.outputs.jsonContent).data.id == null
+    if: fromJson(needs.read.outputs.jsonContent).data.id == null
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -64,7 +64,7 @@ jobs:
   update: 
     runs-on: ubuntu-latest
     needs: read
-    if: fromJson(steps.nfdi4healthData.outputs.jsonContent).data.id != null
+    if: fromJson(needs.read.outputs.jsonContent).data.id != null
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
