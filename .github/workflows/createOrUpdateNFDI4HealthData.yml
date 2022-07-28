@@ -44,9 +44,30 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Create NFDI4Health resource
-        run: |
-          echo Create TODO
+        id: create
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://csh.nfdi4health.de/mdr/studyhub_resources'
+          method: 'POST'
+          customHeaders: '{"Content-Type": "application/json", "Accept": "application/json", "Authorization": "Token ${{ secrets.NFDI4HEALTH_TOKEN }}"}'
+          data: ${{ needs.read.outputs.jsonContent }}
           
+      - name: Checkout Repo
+        uses: actions/checkout@main
+        
+      - name: Replace nfdi4health.json
+        run: |
+          echo $steps.create.outputs.response > Metadaten/nfdi4health.json
+          
+      - name: Push nfdi4health.json
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Updated nfdi4health.json with API response'
+          add: 'Metadaten/nfdi4health.json'
+      
+      # - name: Display Post response
+      #   run: |
+      #     echo ${{ steps.create.outputs.response }}
       # - name: Output
       #   run: |
       #     # echo JSON: ${{ steps.nfdi4healthData.outputs.jsonContent }}
@@ -74,4 +95,4 @@ jobs:
           url: format('https://csh.nfdi4health.de/mdr/studyhub_resources/{0}', fromJson(steps.nfdi4healthData.outputs.jsonContent).data.id)
           method: 'PUT'
           customHeaders: '{"Content-Type": "application/json", "Accept": "application/json", "Authorization": "Token ${{ secrets.NFDI4HEALTH_TOKEN }}"}'
-          data: ${{ steps.nfdi4healthData.outputs.jsonContent }}
+          data: ${{ needs.read.outputs.jsonContent }}
