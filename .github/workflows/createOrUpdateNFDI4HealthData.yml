@@ -55,13 +55,12 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@main
         
-      - name: Output Response
-        run: |
-          echo ${{steps.create.outputs.response}}
-        
       - name: Replace nfdi4health.json
-        run: |
-          echo "${{steps.create.outputs.response}}" > Metadaten/nfdi4health.json
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: 'nfdi4health.json'
+          json: ${{steps.create.outputs.response}}
+          dir: 'Metadaten'
           
       - name: Push nfdi4health.json
         uses: EndBug/add-and-commit@v9
