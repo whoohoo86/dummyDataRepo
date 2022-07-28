@@ -75,7 +75,7 @@ jobs:
       - name: Update NFDI4Health resource
         uses: fjogeleit/http-request-action@v1
         with:
-          url: https://csh.nfdi4health.de/mdr/studyhub_resources/${{fromJson(steps.nfdi4healthData.outputs.jsonContent).data.id}}
+          url: 'https://csh.nfdi4health.de/mdr/studyhub_resources/${{fromJson(steps.nfdi4healthData.outputs.jsonContent).data.id}}'
           method: 'PUT'
           customHeaders: '{"Content-Type": "application/json", "Accept": "application/json", "Authorization": "Token ${{ secrets.NFDI4HEALTH_TOKEN }}"}'
           data: ${{ needs.read.outputs.jsonContent }}
