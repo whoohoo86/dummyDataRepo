@@ -4,7 +4,7 @@
     "attributes": {
       "commit_button": "Submit",
       "resource": {
-        "resource_type": "Dataset",
+        "resource_type": "Study",
         "resource_type_general": "Standard",
         "resource_version": "",
         "resource_format": "",
