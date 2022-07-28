@@ -2,9 +2,9 @@ name: Create or update data on NFDI4Health via API
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'Metadaten/nfdi4health.json'
+  # push:
+    # paths:
+      # - 'Metadaten/nfdi4health.json'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:    
