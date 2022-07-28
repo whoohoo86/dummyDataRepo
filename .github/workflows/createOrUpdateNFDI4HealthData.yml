@@ -28,17 +28,17 @@ jobs:
         run: |
           content=`cat Metadaten/nfdi4health.json`
           # the following lines are only required for multi line json
-          # content=${content//%/%25}
-          # content=${content//$n/%0A}
-          # content=${content//$r/%0D}
+          content=${content//%/%25}
+          content=${content//$n/%0A}
+          content=${content//$r/%0D}
           # end of optional handling for multi line json
-          content=fromJson($content)
+          # content=fromJson($content)
           echo ::set-output name=data::$content
 
       - name: Output
         run: |
-          echo ${{ steps.nfdi4healthData.outputs.data }}
-          echo ID: ${{ steps.nfdi4healthData.outputs.data.id }}
+          echo ${{ fromJson(steps.nfdi4healthData.outputs.data) }}
+          echo ID: ${{ fromJson(steps.nfdi4healthData.outputs.data).id }}
       
       #- name: POST nfdi4health.json
       #  id: postData
