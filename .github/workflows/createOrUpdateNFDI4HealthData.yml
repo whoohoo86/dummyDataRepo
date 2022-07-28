@@ -18,17 +18,43 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@main
 
-      - name: Read id from '.nfdi4health.json'
-        run: |
-          echo "`jq '.data.id' ./Metadaten/nfdi4health.json`"
-          echo "NFDI4HEALTH_ID=`jq '.data.id' ./Metadaten/nfdi4health.json`" >> $GITHUB_ENV
+      #- name: Read id from '.nfdi4health.json'
+      #  run: |
+      #    echo "`jq '.data.id' ./Metadaten/nfdi4health.json`"
+      #    echo "NFDI4HEALTH_ID=`jq '.data.id' ./Metadaten/nfdi4health.json`" >> $GITHUB_ENV
           
-      - name: Create NFDI4Health resource
-        if: fromJson(env.NFDI4HEALTH_ID) == null
+      - name: Read nfdi4health.json content
+        id: nfdi4healthData
         run: |
-          echo Create TODO
+          content=`cat Metadaten/nfdi4health.json`
+          # the following lines are only required for multi line json
+          content=${content//%/%25}
+          content=${content//$n/%0A}
+          content=${content//$r/%0D}
+          # end of optional handling for multi line json
+          content=fromJson($content)
+          echo ::set-output name=data::$content
+
+      - name: Output
+        run: |
+          echo ${{ steps.nfdi4healthData.outputs.data }}
+          echo ID: ${{ steps.nfdi4healthData.outputs.data.id }}
+      
+      #- name: POST nfdi4health.json
+      #  id: postData
+      #  uses: fjogeleit/http-request-action@v1
+      #  with:
+      #    url: 'https://csh.nfdi4health.de/mdr/studyhub_resources'
+      #    method: 'POST'
+      #    customHeaders: '{"Content-Type": "application/json", "Accept": "application/json", "Authorization": "Token ${{ secrets.NFDI4HEALTH_TOKEN }}"}'
+      #    data: ${{ steps.nfdi4healthData.outputs.data }}
           
-      - name: Update NFDI4Health resource
-        if: fromJson(env.NFDI4HEALTH_ID) != null
-        run: |
-          echo Update TODO
+      #- name: Create NFDI4Health resource
+      #  if: fromJson(env.NFDI4HEALTH_ID) == null
+      #  run: |
+      #    echo Create TODO
+          
+      #- name: Update NFDI4Health resource
+      #  if: fromJson(env.NFDI4HEALTH_ID) != null
+      #  run: |
+      #    echo Update TODO
