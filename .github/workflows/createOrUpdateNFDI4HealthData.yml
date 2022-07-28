@@ -57,7 +57,7 @@ jobs:
         
       - name: Replace nfdi4health.json
         run: |
-          echo $steps.create.outputs.response > Metadaten/nfdi4health.json
+          echo ${{steps.create.outputs.response}} > Metadaten/nfdi4health.json
           
       - name: Push nfdi4health.json
         uses: EndBug/add-and-commit@v9
