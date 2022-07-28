@@ -422,8 +422,8 @@
       },
       "content_blobs": [
         {
-          "original_filename": "nfdi4health",
-          "url": "https://www.nfdi4health.de/en/",
+          "original_filename": "Github Link",
+          "url": "https://github.com/robert-koch-institut/Gesundheit_in_Deutschland_Aktuell",
           "content_type": "text/html"
         }
       ]
@@ -437,7 +437,6 @@
           }
         ]
       }
-    },
-    "id": 214
+    }
   }
 }
