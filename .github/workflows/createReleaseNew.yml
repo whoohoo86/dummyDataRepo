@@ -65,7 +65,7 @@ jobs:
         uses: EndBug/add-and-commit@v7.1.1
         with:
           message: 'DOI replaced in documentation.'
-          push: 'origin/master'
+          pull: 'origin/master'
 
       - name: Create Release
         id: create_release
