@@ -1,11 +1,12 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Create OpenData GH-Page
+name: Create and publish OpenData website on Github
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   workflow_dispatch:
+  release:
   # push:
     # branches: [ master ]
 
@@ -18,7 +19,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:      
-      - name: Create orphaned branch
+      - name: Pull website code
         # run: git clone https://github.com/whoohoo86/gh-open-data-page.git
         uses: actions/checkout@v2
         with:

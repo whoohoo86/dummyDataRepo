@@ -1,0 +1,32 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Publish to zenodo
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  release:
+
+env:
+  zenodo_deposition_id: 6644127
+  zenodo_server: 'https://zenodo.org'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  zenodo:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          lfs: true
+         
+      - name: Publish Data and Metadata on Zenodo
+        uses: kykrueger/zenodo-publish@v1.0.4
+        with:
+          zenodo_metadata: Metadaten/zenodo.json
+          whitelist_uploads: .github/workflows/.zenodo_whitelist_uploads
+          zenodo_deposition_id: ${{ env.zenodo_deposition_id }}
+          zenodo_server: ${{ env.zenodo_server }}
+          zenodo_token: ${{ secrets.ZENODO_TOKEN }}
+
