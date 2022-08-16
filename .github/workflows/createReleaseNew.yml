@@ -22,10 +22,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           lfs: 'true'
-          fetch-depth: 2
+        #  fetch-depth: 2
       
       - name: Create new deposition draft on zenodo
         uses: kykrueger/zenodo-new-version@v1.0.2
@@ -65,9 +65,8 @@ jobs:
         with:
         #  push: origin HEAD:master
           pull: true
-          push: origin HEAD:master
+          push: 'origin HEAD:master'
           message: 'DOI replaced in documentation.'
-          
 
       - name: Create Release
         id: create_release
