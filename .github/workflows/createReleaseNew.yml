@@ -63,8 +63,9 @@ jobs:
       - name: Add and Commit Changes 
         uses: EndBug/add-and-commit@v7.2
         with:
-          message: 'DOI replaced in documentation.'
-        #  push: origin HEAD:${{ github.head_ref }}
+          push: origin HEAD:master
+          message: 'DOI replaced in documentation. Working?'
+          
 
       - name: Create Release
         id: create_release
