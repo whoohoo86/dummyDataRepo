@@ -61,10 +61,10 @@ jobs:
         run: rm -rf md2pdf .tmp_zenodo_deposition.json
         
       - name: Add and Commit Changes 
-        uses: EndBug/add-and-commit@v7.2
+        uses: EndBug/add-and-commit@v7
         with:
-          push: origin HEAD:master
-          message: 'DOI replaced in documentation. Working?'
+        #  push: origin HEAD:master
+          message: 'DOI replaced in documentation.'
           
 
       - name: Create Release
