@@ -7,6 +7,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
  workflow_dispatch:
  push:
+  branches: [ master ]
   tags:
     - '[0-9][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]'
 
@@ -27,7 +28,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           lfs: 'true'
-          fetch-depth: 2
+        #  fetch-depth: 2
       
       - name: Create new deposition draft on zenodo
         uses: kykrueger/zenodo-new-version@v1.0.2
