@@ -27,6 +27,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           lfs: 'true'
+          fetch-depth: 2
       
       - name: Create new deposition draft on zenodo
         uses: kykrueger/zenodo-new-version@v1.0.2
@@ -65,8 +66,6 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           message: 'DOI replaced in documentation.'
-          pull: true
-          push: true
 
       - name: Create Release
         id: create_release
