@@ -24,7 +24,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
         with:
-          lfs: 'true'
+          lfs: true
+          ref: ${GITHUB_REF##*/}
         #  fetch-depth: 2
       
       - name: Create new deposition draft on zenodo
@@ -63,9 +64,6 @@ jobs:
       - name: Add and Commit Changes 
         uses: EndBug/add-and-commit@v9
         with:
-        #  push: origin HEAD:master
-          pull: true
-          push: 'origin HEAD:master'
           message: 'DOI replaced in documentation.'
 
       - name: Create Release
